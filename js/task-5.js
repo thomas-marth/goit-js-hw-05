@@ -17,6 +17,13 @@ class Car {
    *  isOn - заведен ли автомобиль, значения true или false. Изначально false
    *  distance - общий киллометраж, изначально 0
    */
+
+  static getSpecs({ maxSpeed, speed, isOn, distance, price }) {
+    console.log(
+      `maxSpeed: ${maxSpeed}, speed: ${speed}, isOn: ${isOn}, distance: ${distance}, price: ${price}`,
+    );
+  }
+
   constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
     this.speed = speed;
     this._price = price;
@@ -86,10 +93,6 @@ class Car {
     if (this.isOn === true) {
       this.distance += hours * this.speed;
     }
-  }
-
-  static getSpecs(car) {
-    console.log(car);
   }
 }
 
